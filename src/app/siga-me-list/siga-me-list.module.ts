@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { SigaMeListRoutingModule } from './siga-me-list-routing.module';
 import { SigaMeListComponent } from './siga-me-list/siga-me-list.component';
+import { AppMaterialModule } from '../shared/app-material/app-material.module';
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import { SigaMeListComponent } from './siga-me-list/siga-me-list.component';
   ],
   imports: [
     CommonModule,
-    SigaMeListRoutingModule
+    SigaMeListRoutingModule,
+    AppMaterialModule
   ]
 })
 export class SigaMeListModule { }
