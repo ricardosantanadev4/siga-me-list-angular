@@ -1,0 +1,12 @@
+{
+    "values": [
+        {
+            "nome": "Sigame-1",
+            "tipo": "Permanene",
+            "categoria": "Total",
+            "status": "Aberto",
+            "ramal": "6001",
+            "destino": "6099"
+        }
+    ]
+}

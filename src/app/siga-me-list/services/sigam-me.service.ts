@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { SigaMe } from '../model/siga-me';
 
@@ -6,7 +7,7 @@ import { SigaMe } from '../model/siga-me';
 })
 export class SigamMeService {
   dataSource: SigaMe[] = [{ nome: 'Sigame-1', tipo: 'Permanene', categoria: 'Total', status: 'Aberto', ramal: '6001', destino: '6099' }];
-  constructor() { }
+  constructor(private httpClient: HttpClient) { }
 
   getSigaMe() {
     return this.dataSource
