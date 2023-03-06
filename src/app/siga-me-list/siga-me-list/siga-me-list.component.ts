@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Observable } from 'rxjs';
 import { SigaMe } from '../model/siga-me';
 import { SigamMeService } from '../services/sigam-me.service';
 
@@ -9,11 +10,12 @@ import { SigamMeService } from '../services/sigam-me.service';
 })
 export class SigaMeListComponent {
   // dataSource: SigaMe[] = [{ nome: '', tipo: '', categoria: '', status: '', ramal: '', destino: '' }];
-  dataSource: SigaMe[] = [];
+  dataSource$: Observable<SigaMe[]>;
   displayedColumns = ['nome', 'tipo', 'categoria', 'status', 'ramal', 'destino']
 
   constructor(private sigameService: SigamMeService) {
-    this.dataSource = this.sigameService.getSigaMe();
+    // this.sigameService.getSigaMe().subscribe(sigaMe => this.dataSource = sigaMe);
+    this.dataSource$ = this.sigameService.getSigaMe();
   }
 
 }
