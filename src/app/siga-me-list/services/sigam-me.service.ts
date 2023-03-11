@@ -8,7 +8,7 @@ import { SigaMe } from '../model/siga-me';
 })
 export class SigamMeService {
   dataSource: SigaMe[] = [{ nome: 'Sigame-1', tipo: 'Permanene', categoria: 'Total', status: 'Aberto', ramal: '6001', destino: '6099' }];
-  private readonly API = 'http://localhost:3000/values';
+  private readonly API = '/api/sigaMe';
   constructor(private httpClient: HttpClient) { }
 
   getSigaMe() {

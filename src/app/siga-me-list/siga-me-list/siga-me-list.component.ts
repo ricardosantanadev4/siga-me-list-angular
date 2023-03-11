@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 import { catchError, Observable, of } from 'rxjs';
 import { ErrorDialogComponent } from 'src/app/shared/components/error-dialog/error-dialog.component';
 import { SigaMe } from '../model/siga-me';
@@ -13,9 +14,10 @@ import { SigamMeService } from '../services/sigam-me.service';
 export class SigaMeListComponent {
   // dataSource: SigaMe[] = [{ nome: '', tipo: '', categoria: '', status: '', ramal: '', destino: '' }];
   dataSource$: Observable<SigaMe[]>;
-  displayedColumns = ['nome', 'tipo', 'categoria', 'status', 'ramal', 'destino']
+  displayedColumns = ['nome', 'tipo', 'categoria', 'status', 'ramal', 'destino', 'actions']
 
-  constructor(private sigameService: SigamMeService, public dialog: MatDialog) {
+  constructor(private sigameService: SigamMeService, public dialog: MatDialog, private router: Router) {
+
     // this.sigameService.getSigaMe().subscribe(sigaMe => this.dataSource = sigaMe);
     this.dataSource$ = this.sigameService.getSigaMe().pipe(
       catchError(error => {
@@ -25,11 +27,17 @@ export class SigaMeListComponent {
       },
       )
     );
+
   }
 
   openDialog(erroMsg: string) {
     this.dialog.open(ErrorDialogComponent, {
       data: erroMsg,
     });
+  }
+
+  onAdd() {
+    console.log('Adicionar siga-me')
+    this.router.navigate(['siga-me-list/new']);
   }
 }
