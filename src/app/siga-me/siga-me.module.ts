@@ -6,12 +6,14 @@ import { SharedModule } from '../shared/shared.module';
 import { SigaMeFormComponent } from './siga-me-form/siga-me-form.component';
 import { SigaMeComponent } from './siga-me/siga-me.component';
 import { SigaMetRoutingModule } from './siga-me-routing.module';
+import { SigaMeListComponent } from './siga-me-list/siga-me-list.component';
 
 
 @NgModule({
   declarations: [
     SigaMeComponent,
-    SigaMeFormComponent
+    SigaMeFormComponent,
+    SigaMeListComponent
   ],
   imports: [
     CommonModule,
