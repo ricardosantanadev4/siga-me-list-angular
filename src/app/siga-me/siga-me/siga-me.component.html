@@ -1,48 +1,48 @@
 <mat-card>
     <mat-card-content>
         <mat-toolbar color="primary">
-            <span>Siga-mes disponíveis</span>
+            <span> Siga-mes disponíveis </span>
         </mat-toolbar>
         <div *ngIf="dataSource$ | async as sigaMe; else elseBlock">
-            <table mat-table [dataSource]="sigaMe" class="mat-elevation-z8">
+            <mat-table [dataSource]="sigaMe" class="mat-elevation-z8">
 
                 <!--- Note that these columns can be defined in any order.
                       The actual rendered columns are set as a property on the row definition" -->
 
                 <!-- Nome Column -->
                 <ng-container matColumnDef="nome">
-                    <th mat-header-cell *matHeaderCellDef> Nome </th>
-                    <td mat-cell *matCellDef="let element"> {{element.nome}} </td>
+                    <mat-header-cell *matHeaderCellDef> Nome </mat-header-cell>
+                    <mat-cell *matCellDef="let element"> {{element.nome}} </mat-cell>
                 </ng-container>
 
                 <!-- Tipo Column -->
                 <ng-container matColumnDef="tipo">
-                    <th mat-header-cell *matHeaderCellDef> Tipo </th>
-                    <td mat-cell *matCellDef="let element"> {{element.tipo}} </td>
+                    <mat-header-cell *matHeaderCellDef> Tipo </mat-header-cell>
+                    <mat-cell *matCellDef="let element"> {{element.tipo}} </mat-cell>
                 </ng-container>
 
                 <!-- Categoria Column -->
                 <ng-container matColumnDef="categoria">
-                    <th mat-header-cell *matHeaderCellDef> Categoria </th>
-                    <td mat-cell *matCellDef="let element"> {{element.categoria}} </td>
+                    <mat-header-cell *matHeaderCellDef> Categoria </mat-header-cell>
+                    <mat-cell *matCellDef="let element"> {{element.categoria}} </mat-cell>
                 </ng-container>
 
                 <!-- Status Column -->
                 <ng-container matColumnDef="status">
-                    <th mat-header-cell *matHeaderCellDef> status </th>
-                    <td mat-cell *matCellDef="let element"> {{element.status}} </td>
+                    <mat-header-cell *matHeaderCellDef> status </mat-header-cell>
+                    <mat-cell *matCellDef="let element"> {{element.status}} </mat-cell>
                 </ng-container>
 
                 <!-- Ramal Column -->
                 <ng-container matColumnDef="ramal">
-                    <th mat-header-cell *matHeaderCellDef> ramal </th>
-                    <td mat-cell *matCellDef="let element"> {{element.ramal}} </td>
+                    <mat-header-cell *matHeaderCellDef> ramal </mat-header-cell>
+                    <mat-cell *matCellDef="let element"> {{element.ramal}} </mat-cell>
                 </ng-container>
 
                 <!-- Destino Column -->
                 <ng-container matColumnDef="destino">
-                    <th mat-header-cell *matHeaderCellDef> destino </th>
-                    <td mat-cell *matCellDef="let element"> {{element.destino}} </td>
+                    <mat-header-cell *matHeaderCellDef> destino </mat-header-cell>
+                    <mat-cell *matCellDef="let element"> {{element.destino}} </mat-cell>
                 </ng-container>
 
                 <!-- Acoes Column -->
@@ -62,9 +62,9 @@
                     </mat-cell>
                 </ng-container>
 
-                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-            </table>
+                <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+            </mat-table>
         </div>
         <ng-template #elseBlock>
             <div class="load-spinner">
