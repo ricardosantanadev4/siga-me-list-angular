@@ -1,1 +1,62 @@
-<p>siga-me-list works!</p>
+<mat-table [dataSource]="sigaMeList">
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+
+    <!-- Nome Column -->
+    <ng-container matColumnDef="nome">
+        <mat-header-cell *matHeaderCellDef> Nome </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.nome}} </mat-cell>
+    </ng-container>
+
+    <!-- Tipo Column -->
+    <ng-container matColumnDef="tipo">
+        <mat-header-cell *matHeaderCellDef> Tipo </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.tipo}} </mat-cell>
+    </ng-container>
+
+    <!-- Categoria Column -->
+    <ng-container matColumnDef="categoria">
+        <mat-header-cell *matHeaderCellDef> Categoria </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.categoria}} </mat-cell>
+    </ng-container>
+
+    <!-- Status Column -->
+    <ng-container matColumnDef="status">
+        <mat-header-cell *matHeaderCellDef> status </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.status}} </mat-cell>
+    </ng-container>
+
+    <!-- Ramal Column -->
+    <ng-container matColumnDef="ramal">
+        <mat-header-cell *matHeaderCellDef> ramal </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.ramal}} </mat-cell>
+    </ng-container>
+
+    <!-- Destino Column -->
+    <ng-container matColumnDef="destino">
+        <mat-header-cell *matHeaderCellDef> destino </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.destino}} </mat-cell>
+    </ng-container>
+
+    <!-- Acoes Column -->
+    <ng-container matColumnDef="actions">
+        <mat-header-cell *matHeaderCellDef>
+            <button mat-mini-fab color="primary" aria-label="Adicionar siga-me" (click)="onAddList()">
+                <mat-icon>add</mat-icon>
+            </button>
+        </mat-header-cell>
+        <mat-cell *matCellDef="let element">
+            <button mat-icon-button color="primary" aria-label="Editar siga-me">
+                <mat-icon>edit</mat-icon>
+            </button>
+            <button mat-icon-button color="warn" aria-label="Deletar siga-me">
+                <mat-icon>delete</mat-icon>
+            </button>
+        </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+</mat-table>
+

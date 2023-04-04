@@ -14,7 +14,6 @@ import { SigamMeService } from '../services/sigam-me.service';
 export class SigaMeComponent {
   // dataSource: SigaMe[] = [{ nome: '', tipo: '', categoria: '', status: '', ramal: '', destino: '' }];
   dataSource$: Observable<SigaMe[]>;
-  displayedColumns = ['nome', 'tipo', 'categoria', 'status', 'ramal', 'destino', 'actions']
 
   constructor(private sigameService: SigamMeService, public dialog: MatDialog, private router: Router
     , private route: ActivatedRoute) {
@@ -38,7 +37,7 @@ export class SigaMeComponent {
   }
 
   onAdd() {
-    console.log('Adicionar siga-me')
+    console.log('onAdd')
     this.router.navigate(['new'], { relativeTo: this.route });
   }
 }
