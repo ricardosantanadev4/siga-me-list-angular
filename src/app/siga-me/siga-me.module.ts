@@ -1,23 +1,23 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { SigaMeListRoutingModule } from './siga-me-list-routing.module';
-import { SigaMeListComponent } from './siga-me-list/siga-me-list.component';
 import { AppMaterialModule } from '../shared/app-material/app-material.module';
 import { SharedModule } from '../shared/shared.module';
 import { SigaMeFormComponent } from './siga-me-form/siga-me-form.component';
+import { SigaMeComponent } from './siga-me/siga-me.component';
+import { SigaMetRoutingModule } from './siga-me-routing.module';
 
 
 @NgModule({
   declarations: [
-    SigaMeListComponent,
+    SigaMeComponent,
     SigaMeFormComponent
   ],
   imports: [
     CommonModule,
-    SigaMeListRoutingModule,
+    SigaMetRoutingModule,
     AppMaterialModule,
     SharedModule
   ]
 })
-export class SigaMeListModule { }
+export class SigaMeModule { }

@@ -2,10 +2,10 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-  { path: '', pathMatch: 'full', redirectTo: 'siga-me-list' },
+  { path: '', pathMatch: 'full', redirectTo: 'siga-me' },
   {
-    path: 'siga-me-list',
-    loadChildren: () => import('./siga-me-list/siga-me-list.module').then(m => m.SigaMeListModule)
+    path: 'siga-me',
+    loadChildren: () => import('./siga-me/siga-me.module').then(m => m.SigaMeModule)
   }
 ];
 

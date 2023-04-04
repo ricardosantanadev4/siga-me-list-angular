@@ -7,11 +7,11 @@ import { SigaMe } from '../model/siga-me';
 import { SigamMeService } from '../services/sigam-me.service';
 
 @Component({
-  selector: 'app-siga-me-list',
-  templateUrl: './siga-me-list.component.html',
-  styleUrls: ['./siga-me-list.component.scss']
+  selector: 'app-siga-me',
+  templateUrl: './siga-me.component.html',
+  styleUrls: ['./siga-me.component.scss']
 })
-export class SigaMeListComponent {
+export class SigaMeComponent {
   // dataSource: SigaMe[] = [{ nome: '', tipo: '', categoria: '', status: '', ramal: '', destino: '' }];
   dataSource$: Observable<SigaMe[]>;
   displayedColumns = ['nome', 'tipo', 'categoria', 'status', 'ramal', 'destino', 'actions']

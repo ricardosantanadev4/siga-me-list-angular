@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SigaMeListComponent } from './siga-me-list.component';
+import { SigaMeListComponent } from './siga-me.component';
 
 describe('SigaMeListComponent', () => {
   let component: SigaMeListComponent;
